@@ -1,0 +1,255 @@
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+#join-generate.buttonn .state--sent {
+    display: none !important;
+}
+
+#join-generate.buttonn.generated .state--default {
+    display: none;
+}
+
+#join-generate.buttonn.generated .state--sent {
+    display: flex !important;
+}
+
+#join-generate.buttonn.generated .state--sent p span {
+    animation: slideDown 0.8s ease forwards;
+}
+
+#join-copy.buttonn .state--sent {
+    display: none;
+}
+
+#join-copy.buttonn.copied .state--default {
+    display: none;
+}
+
+#join-copy.buttonn.copied .state--sent {
+    display: flex !important;
+}
+
+#join-copy.buttonn.copied .state--sent p span {
+    animation: slideDown 0.8s ease forwards;
+}
+
+.buttonn {
+    cursor: pointer;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #001d4a 0%, #003b7a 50%, #00aaff 100%);
+    background-size: 200% auto;
+    color: #e0fbff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 200, 255, 0.35);
+    box-shadow: 0 0 12px #00f0ff, 0 0 24px #0055ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    min-width: 128px;
+    padding: 10px 12px;
+    height: 46px;
+    width: auto;
+    max-width: none;
+    font-family: 'Orbitron', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.buttonn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 10px #00aaff, 0 0 18px #0055ff;
+}
+
+.buttonn:after {
+    display: none;
+}
+
+.buttonn::before {
+    display: none;
+}
+
+.buttonn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.buttonn:hover {
+    background-position: right center;
+    filter: hue-rotate(10deg) brightness(1.05);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 0 16px #00aaff, 0 0 28px #0077aa;
+}
+
+.state p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    padding: 0 18px 0 34px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1;
+}
+
+.state .icon {
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(1.25);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.state .icon svg {
+    overflow: visible;
+    filter: drop-shadow(0 1px 0.6px rgba(0, 0, 0, 0.5));
+}
+
+.outline {
+    display: none;
+}
+
+.outline::before {
+    display: none;
+}
+
+.state p span {
+    display: block;
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards;
+}
+
+.buttonn:hover p span {
+    opacity: 1;
+    animation: wave 0.5s ease forwards;
+}
+
+.state p span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.state p span:nth-child(2) {
+    animation-delay: 0.03s;
+}
+
+.state p span:nth-child(3) {
+    animation-delay: 0.06s;
+}
+
+.state p span:nth-child(4) {
+    animation-delay: 0.09s;
+}
+
+.state p span:nth-child(5) {
+    animation-delay: 0.12s;
+}
+
+.state p span:nth-child(6) {
+    animation-delay: 0.15s;
+}
+
+.state p span:nth-child(7) {
+    animation-delay: 0.18s;
+}
+
+.state p span:nth-child(8) {
+    animation-delay: 0.21s;
+}
+
+.state p span:nth-child(9) {
+    animation-delay: 0.24s;
+}
+
+@keyframes wave {
+    30% {
+        opacity: 1;
+        transform: translateY(4px) translateX(0) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-3px) translateX(0) rotate(0);
+        color: #00aaff;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) translateX(5px) rotate(-90deg);
+        color: #00aaff;
+        filter: blur(5px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(4px) translateX(0) rotate(0);
+        filter: blur(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-3px) translateX(0) rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+}
+
+.state--default .icon svg {
+    animation: land 0.6s ease forwards;
+}
+
+.buttonn:hover .state--default .icon {
+    transform: rotate(45deg) scale(1.25);
+}
+
+@keyframes land {
+    0% {
+        transform: translateX(-60px) translateY(30px) rotate(-50deg) scale(2);
+        opacity: 0;
+        filter: blur(3px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.state {
+    padding-left: 0;
+    flex: 1;
+    z-index: 2;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.state--sent {
+    display: none;
+}
